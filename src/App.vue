@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar class="primary" dark>
+    <v-toolbar class="primary flex-grow-0" dense dark>
       <v-app-bar-nav-icon
         @click.stop="sideNav = !sideNav"
         class="hidden-sm-and-up"></v-app-bar-nav-icon>

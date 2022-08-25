@@ -62,10 +62,8 @@
               </v-layout>
               <v-divider></v-divider>
               <v-layout row mt-2>
-                <v-col class="text-center">
-                  <v-btn color="primary" @click="onCancel()">Cancel</v-btn>
-                </v-col>
-                <v-col class="text-center">
+                <v-col>
+                  <v-btn @click="onCancel()" class="mr-5">Cancel</v-btn>
                   <v-btn class="red accent-4" dark @click="onEmailResults()">Email Results</v-btn>
                 </v-col>
               </v-layout>

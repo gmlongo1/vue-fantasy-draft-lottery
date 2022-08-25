@@ -68,10 +68,8 @@
                 </v-layout>
                 <v-layout row mt-3>
                   <v-col xs12>
-                    <v-btn color="primary" @click="onCancel()">Cancel</v-btn>
-                  </v-col>
-                  <v-col>
-                    <v-btn @click="onUpdateLeague()" :disabled="!formValid" :loading="loading" primary>Update</v-btn>
+                    <v-btn @click="onCancel()" class="mr-5">Cancel</v-btn>
+                    <v-btn color="primary" @click="onUpdateLeague()" :disabled="!formValid" :loading="loading" primary>Update</v-btn>
                   </v-col>
                 </v-layout>
               </v-form>

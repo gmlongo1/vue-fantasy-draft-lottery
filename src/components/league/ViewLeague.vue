@@ -80,13 +80,9 @@
                 </v-col>
               </v-layout>
               <v-layout row justify-center>
-                <v-col md="4" class="text-center">
-                  <v-btn color="primary" @click="onEditTeams()" class="mt-0 mr-0"><v-icon left>mdi-pencil</v-icon>Edit</v-btn>
-                </v-col>
-                <v-col md="4" class="text-center">
-                  <v-btn color="primary" router to="/leagues">Cancel</v-btn>
-                </v-col>
-                <v-col md="4" class="text-center">
+                <v-col>
+                  <v-btn color="primary" @click="onEditTeams()" class="mt-0 mr-5"><v-icon left>mdi-pencil</v-icon>Edit</v-btn>
+                  <v-btn color="primary" router to="/leagues" class="mr-5">Cancel</v-btn>
                   <v-btn class="red accent-4" dark @click="onGenerateOrder()">Generate Order</v-btn>
                 </v-col>
               </v-layout>
