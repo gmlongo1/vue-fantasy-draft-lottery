@@ -31,7 +31,7 @@
                 </v-layout>
                 <v-layout row>
                   <v-col xs12>
-                    <v-btn @click="onSignout()" class="mt-4" primary><v-icon left>mdi-logout</v-icon>Sign Out</v-btn>
+                    <v-btn @click="onSignout()" class="mt-4 primary"><v-icon left>mdi-logout</v-icon>Sign Out</v-btn>
                   </v-col>
                 </v-layout>
               </v-form>

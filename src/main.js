@@ -23,19 +23,6 @@ import App from './App'
 import * as firebase from 'firebase'
 import router from './router'
 import { store } from './store'
-import colors from 'vuetify/es5/util/colors'
-
-/*Vue.use(Vuetify, {
-  theme: {
-    primary: '#1976D2',
-    secondary: '#2196F3',
-    accent: colors.yellow.lighten1,
-    error: '#FF5252',
-    info: '#2196F3',
-    success: '#4CAF50',
-    warning: '#FFC107'
-  }
-})*/
 
 Vue.config.productionTip = false
 

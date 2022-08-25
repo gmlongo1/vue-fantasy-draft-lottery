@@ -1,11 +1,18 @@
 <template>
   <v-app>
-    <v-toolbar class="primary flex-grow-0" dense dark>
+    <v-toolbar class="primary flex-grow-0" dark>
       <v-app-bar-nav-icon
         @click.stop="sideNav = !sideNav"
         class="hidden-sm-and-up"></v-app-bar-nav-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor:pointer; font-family: 'verdana'"><span>fantasy</span><span style="color: #82C1F2">draft</span><span>lottery</span></router-link>
+        <v-row justify="center" align="center">
+          <v-col>
+            <v-img src="./assets/fdl logo small.png"></v-img>
+          </v-col>
+          <v-col>
+            <router-link to="/" tag="span" style="cursor:pointer; font-family: 'verdana'"><span>fantasy</span><span style="color: #004ba0">draft</span><span>lottery</span></router-link>
+          </v-col>
+        </v-row>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only mr-0" >

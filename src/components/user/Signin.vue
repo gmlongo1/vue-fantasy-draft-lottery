@@ -32,11 +32,9 @@
                       required></v-text-field>
                   </v-col>
                 </v-layout>
-                <v-layout row justify-center>
-                  <v-col md="4">
-                    <v-btn @click="onSignin()" :disabled="!formValid">Sign In</v-btn>
-                  </v-col>
-                  <v-col md="4">
+                <v-layout row>
+                  <v-col>
+                    <v-btn @click="onSignin()" :disabled="!formValid" class="mr-5 primary">Sign In</v-btn>
                     <v-btn class="red accent-4" dark @click="onGoogleSignin()"><v-icon left>mdi-google</v-icon>Sign In With Google</v-btn>
                   </v-col>
                 </v-layout>
