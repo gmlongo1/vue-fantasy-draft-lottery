@@ -1,7 +1,7 @@
 <template>
   <v-container mt-0>
     <v-layout row>
-      <v-flex xs12 sm6 offset-sm3>
+      <v-col xs12 sm6 offset-sm3>
         <v-card>
           <v-toolbar class="secondary" extended>
             <v-toolbar-title slot="extension" class="white--text">Create League</v-toolbar-title>
@@ -10,7 +10,7 @@
             <v-container>
               <v-form v-model="formValid">
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-text-field
                       name="season"
                       label="Season"
@@ -18,10 +18,10 @@
                       v-model="season"
                       v-bind:rules="seasonRules"
                       required></v-text-field>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-text-field
                       name="name"
                       label="Name"
@@ -29,10 +29,10 @@
                       v-model="name"
                       v-bind:rules="nameRules"
                       required></v-text-field>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-text-field
                       name="owner"
                       label="Owner"
@@ -40,10 +40,10 @@
                       v-model="owner"
                       v-bind:rules="ownerRules"
                       required></v-text-field>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-text-field
                       name="email"
                       label="Mail"
@@ -52,19 +52,19 @@
                       type="email"
                       v-bind:rules="emailRules"
                       required></v-text-field>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
                 <v-layout row mt-3>
-                  <v-flex xs12>
-                     <v-btn color="primary" router to="/leagues">Cancel</v-btn>
-                    <v-btn @click="onCreateLeague()" :disabled="!formValid" primary>Create</v-btn>
-                  </v-flex>
+                  <v-col xs12>
+                    <v-btn router to="/leagues" class="mr-4">Cancel</v-btn>
+                    <v-btn color="primary" @click="onCreateLeague()" :disabled="!formValid" primary>Create</v-btn>
+                  </v-col>
                 </v-layout>
               </v-form>
             </v-container>
           </v-card-text>
         </v-card>
-      </v-flex>
+      </v-col>
     </v-layout>
     <v-snackbar
       :top="snackbarLocationTop"

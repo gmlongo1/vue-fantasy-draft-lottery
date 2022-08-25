@@ -46,7 +46,7 @@
               <v-divider></v-divider>
               <v-layout row mt-3>
                   <v-col>
-                    <v-btn @click="onCancel()" class="mr-5">Cancel</v-btn>
+                    <v-btn @click="onCancel()" class="mr-4">Cancel</v-btn>
                     <v-btn @click="onUpdateTeams()" :disabled="!reordered" :loading="loading" class="primary">Update</v-btn>
                   </v-col>
               </v-layout>

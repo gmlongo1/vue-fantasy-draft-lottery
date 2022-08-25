@@ -51,12 +51,12 @@
                       disabled></v-select>
                   </v-col>
                 </v-layout>
-              <v-layout row>
+              <v-layout row class="mt-0">
                 <v-col xs12 text-xs-right>
-                  <v-btn color="primary" @click="onEditLeague()" class="mt-0 mr-0"><v-icon left>mdi-pencil</v-icon>Edit</v-btn>
+                  <v-btn outlined class="no-border" color="primary" @click="onEditLeague()"><v-icon left>mdi-pencil</v-icon>Edit</v-btn>
                 </v-col>
               </v-layout>
-              <v-layout row mt-7 mb-7>
+              <v-layout row mt-5 mb-5>
                 <v-divider></v-divider>
               </v-layout>
               <v-layout row mt-3>
@@ -79,10 +79,17 @@
                   </v-list>
                 </v-col>
               </v-layout>
+              <v-layout row class="mt-0">
+                <v-col>
+                  <v-btn outlined class="no-border" color="primary" @click="onEditTeams()"><v-icon left>mdi-pencil</v-icon>Edit</v-btn>
+                </v-col>
+              </v-layout>
+              <v-layout row mt-5 mb-5>
+                <v-divider></v-divider>
+              </v-layout>
               <v-layout row justify-center>
                 <v-col>
-                  <v-btn color="primary" @click="onEditTeams()" class="mt-0 mr-5"><v-icon left>mdi-pencil</v-icon>Edit</v-btn>
-                  <v-btn color="primary" router to="/leagues" class="mr-5">Cancel</v-btn>
+                  <v-btn router to="/leagues" class="mr-4">Cancel</v-btn>
                   <v-btn class="red accent-4" dark @click="onGenerateOrder()">Generate Order</v-btn>
                 </v-col>
               </v-layout>
