@@ -62,10 +62,10 @@
               </v-layout>
               <v-divider></v-divider>
               <v-layout row mt-2>
-                <v-col xs6 text-xs-center>
+                <v-col class="text-center">
                   <v-btn color="primary" @click="onCancel()">Cancel</v-btn>
                 </v-col>
-                <v-col xs12 s6 text-xs-center>
+                <v-col class="text-center">
                   <v-btn class="red accent-4" dark @click="onEmailResults()">Email Results</v-btn>
                 </v-col>
               </v-layout>
@@ -133,6 +133,18 @@ export default {
       this.$router.push('/league/' + this.$route.params.id)
     },
     onEmailResults () {
+      let recipients = "";
+      let subject = "";
+      let body = "";
+
+      for (let i = 0; i < this.teams.length; i++) {
+        const team = this.teams[i];
+        if (i > 0)
+          recipients += ",";
+        recipients += team.email;
+      }
+
+      console.log("Recipients", recipients);
     }
   }
 }
