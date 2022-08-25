@@ -1,27 +1,140 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Router from 'vue-router'
+import * as firebase from 'firebase'
+import Home from '@/components/Home'
+import Leagues from '@/components/league/Leagues'
+import CreateLeague from '@/components/league/CreateLeague'
+import UpdateLeague from '@/components/league/UpdateLeague'
+import ViewLeague from '@/components/league/ViewLeague'
+import ViewResults from '@/components/league/ViewResults'
+import UpdateTeams from '@/components/league/UpdateTeams'
+import UpdateTeam from '@/components/league/UpdateTeam'
+import CreateTeam from '@/components/league/CreateTeam'
 
-Vue.use(VueRouter)
+import Profile from '@/components/user/Profile'
+import Signin from '@/components/user/Signin'
+import Signup from '@/components/user/Signup'
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+import { store } from '../store'
+
+Vue.use(Router)
+
+const router = new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/leagues',
+      name: 'Leagues',
+      component: Leagues,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/league/new',
+      name: 'CreateLeague',
+      component: CreateLeague,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/league/:id',
+      name: 'ViewLeague',
+      component: ViewLeague,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/league/:id/results',
+      name: 'ViewResults',
+      component: ViewResults,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/league/:id/edit',
+      name: 'UpdateLeague',
+      component: UpdateLeague,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/league/:id/teams',
+      name: 'UpdateTeams',
+      component: UpdateTeams,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/team/:id/edit',
+      name: 'UpdateTeam',
+      component: UpdateTeam,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/league/:id/teams/new',
+      name: 'CreateTeam',
+      component: CreateTeam,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
+    },
+    {
+      path: '/signin',
+      name: 'Signin',
+      component: Signin
+    }
+  ],
+  mode: 'history'
+})
+
+router.beforeEach((to, from, next) => {
+  // check for current user in vuex
+  const currentUser = store.getters.user
+  if (currentUser) {
+    next()
+  } else {
+    // check firebase to see if user is authenticated
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        store.dispatch('setUser', user)
+        next()
+      } else {
+        // no user
+        const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+
+        if (requiresAuth) {
+          next('signin')
+        } else {
+          next()
+        }
+      }
+    })
   }
-]
-
-const router = new VueRouter({
-  routes
 })
 
 export default router

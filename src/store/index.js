@@ -3,15 +3,23 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+export const store = new Vuex.Store({
+    state: {
+        user: null
+    },
+    getters: {
+        user(state) {
+            return state.user
+        }
+    },
+    mutations: {
+        setUser (state, u) {
+            state.user = u
+        }
+    },
+    actions: {
+        setUser ({ commit, state }, user) {
+            commit("setUser", user)
+        }
+    }
 })
