@@ -60,11 +60,11 @@
       </v-list>
     </v-navigation-drawer>
 
-    <main>
+    <main class="mb-12">
       <router-view></router-view>
     </main>
 
-    <v-footer class="pa-3">
+    <v-footer class="pa-3" bottom app>
       <v-spacer></v-spacer>
       <div>© {{ new Date().getFullYear() }}</div>
     </v-footer>
