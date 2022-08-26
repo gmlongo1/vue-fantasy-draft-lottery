@@ -139,7 +139,6 @@ export default {
     teamsRef.on('child_added',
       data => {
         const val = data.val()
-        console.log("Team: ", val.name + " - " + val.previousFinish)
         this.teams.push(
           {
             key: data.key,
@@ -152,11 +151,16 @@ export default {
       }
     )
 
-    this.teams.sort(
-      (a, b) => {
-        if (a.previousFinish < b.previousFinish) { return -1 }
-        if (a.previousFinish > b.previousFinish) { return 1 }
-        return 0
+    // use the "value" callback to signify that all data has been retrieved so we can now sort
+    teamsRef.on('value',
+      data => {
+        this.teams.sort(
+          (a, b) => {
+            if (a.previousFinish < b.previousFinish) { return -1 }
+            if (a.previousFinish > b.previousFinish) { return 1 }
+            return 0
+          }
+        )
       }
     )
   },
