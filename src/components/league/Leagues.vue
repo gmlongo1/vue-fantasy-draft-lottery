@@ -26,7 +26,7 @@
                   <v-list two-line subheader>
                     <template v-for="(league, index) in leagues" >
                       <v-list-item @click="onLeagueClick(league)" :key="league.name">
-                        <v-list-item-avatar color="primary" class="align-center">
+                        <v-list-item-avatar :color="colors[index]" class="align-center">
                           <span class="white--text text-h5">{{league.name.charAt(0)}}</span>
                         </v-list-item-avatar>
                         <v-list-item-content>
@@ -73,7 +73,8 @@ export default {
     return {
       dialog: false,
       selectedLeague: null,
-      leagues: []
+      leagues: [],
+      colors
     }
   },
   created () {

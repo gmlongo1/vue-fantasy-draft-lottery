@@ -47,8 +47,8 @@
                 <v-col xs12>
                   <v-list two-line subheader>
                     <transition-group name="list" tag="p">
-                      <v-list-item v-for="team in teams" v-bind:key="team.name" class="list-item">
-                        <v-list-item-avatar color="primary">
+                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" class="list-item">
+                        <v-list-item-avatar :color="colors[index]">
                           <span class="icon white--text">{{ team.draftOrder }}</span>
                         </v-list-item-avatar>
                         <v-list-item-content>
@@ -85,7 +85,8 @@ export default {
       season: '',
       owner: '',
       email: '',
-      teams: []
+      teams: [],
+      colors
     }
   },
   mounted () {

@@ -67,8 +67,8 @@
               <v-layout row>
                 <v-col xs12>
                   <v-list two-line subheader>
-                    <v-list-item v-for="team in teams" v-bind:key="team.name">
-                      <v-list-item-avatar color="primary">
+                    <v-list-item v-for="(team, index) in teams" v-bind:key="team.name">
+                      <v-list-item-avatar :color="colors[index]">
                         <span class="icon white--text">{{ team.previousFinish }}</span>
                       </v-list-item-avatar>
                       <v-list-item-content>
@@ -117,7 +117,8 @@ export default {
         { text: 'Weighted - Number of balls per team = previous finish', value: 'W' },
         { text: 'Heavily Weighted - Number of balls per team = previous finish squared', value: 'H' }
       ],
-      teams: []
+      teams: [],
+      colors
     }
   },
   created () {
@@ -138,6 +139,7 @@ export default {
     teamsRef.on('child_added',
       data => {
         const val = data.val()
+        console.log("Team: ", val.name + " - " + val.previousFinish)
         this.teams.push(
           {
             key: data.key,

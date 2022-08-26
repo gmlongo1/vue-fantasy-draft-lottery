@@ -24,9 +24,9 @@
                 <v-col xs12>
                   <v-list two-line subheader>
                     <draggable @end="onTeamsReorder" v-model="teams" :options="{ handle:'.drag-handle' }">
-                      <v-list-item v-for="team in teams" v-bind:key="team.name" @click="onTeamClick(team)">
+                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" @click="onTeamClick(team)">
                         <v-icon class="drag-handle" title="Drag Team to Reorder">mdi-drag-vertical</v-icon>
-                        <v-list-item-avatar color="primary" style="margin-right: 10px">
+                        <v-list-item-avatar :color="colors[index]" style="margin-right: 10px">
                           <span class="icon white--text">{{ team.previousFinish }}</span>
                         </v-list-item-avatar>
                         <v-list-item-content>
@@ -95,7 +95,8 @@ export default {
       snackbar: false,
       snackbarColor: '',
       snackbarText: '',
-      snackbarLocationTop: true
+      snackbarLocationTop: true,
+      colors
     }
   },
   created () {
