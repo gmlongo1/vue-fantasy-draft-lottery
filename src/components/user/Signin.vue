@@ -34,7 +34,7 @@
                 </v-layout>
                 <v-layout row>
                   <v-col>
-                    <v-btn @click="onSignin()" :disabled="!formValid" class="mr-5 primary">Sign In</v-btn>
+                    <v-btn @click="onSignin()" :disabled="!formValid" class="mr-4 primary">Sign In</v-btn>
                     <v-btn class="red accent-4" dark @click="onGoogleSignin()"><v-icon left>mdi-google</v-icon>Google Sign In</v-btn>
                   </v-col>
                 </v-layout>
