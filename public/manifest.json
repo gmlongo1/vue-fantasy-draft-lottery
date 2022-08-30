@@ -3,9 +3,9 @@
     "short_name":"Fantasy Draft Lottery",
     "theme_color":"#4DBA87",
     "icons": [{
-        "src": "./img/icons/fdl logo.svg", //inside the scope!
-        "sizes": "48x48 72x72 96x96 128x128 256x256", //see the size in the devtools, not in editor. I've set up size 1200x1200 in Illustrator, but Chrome says it's 150x150. Also, "sizes":"any" not work.
-        "type": "image/svg+xml", //not image/svg which is still visible in web
+        "src": "./img/icons/fdl logo.svg",
+        "sizes": "48x48 72x72 96x96 128x128 256x256",
+        "type": "image/svg+xml",
         "purpose": "any"
       }],
     "start_url":".",
