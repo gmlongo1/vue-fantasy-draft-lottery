@@ -2,12 +2,19 @@
     "name":"Fantasy Draft Lottery",
     "short_name":"Fantasy Draft Lottery",
     "theme_color":"#4DBA87",
-    "icons": [{
-        "src": "./img/icons/fdl logo.svg",
-        "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
-        "type": "image/svg+xml",
-        "purpose": "any"
-      }],
+    "icons": [
+        {
+            "src": "./img/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icons/android-chrome-maskable-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
     "start_url":".",
     "display":"standalone",
     "background_color":"#000000"
