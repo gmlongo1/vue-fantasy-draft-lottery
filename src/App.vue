@@ -7,7 +7,7 @@
       <v-toolbar-title class="pl-0">
         <v-row justify="center" align="center">
           <v-col>
-            <v-img src="./assets/fdl logo small.png" max-height="56" max-width="84"></v-img>
+            <v-img src="./assets/fdl logo small.svg" max-height="49" max-width="50"></v-img>
           </v-col>
           <v-col>
             <router-link to="/" tag="span" style="cursor:pointer; font-family: 'verdana'"><span>Fantasy</span><span style="color: #004ba0">Draft</span><span>Lottery</span></router-link>
