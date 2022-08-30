@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="fdl shield shadow.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     showborder="false"
+     borderlayer="false"
+     showguides="false"
+     inkscape:zoom="1"
+     inkscape:cx="501.5"
+     inkscape:cy="451.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2606">
+      <path
+         style="opacity:0.582279;fill:#0055d4;stroke-width:0.287194"
+         d="M 100.6537,177.17297 V 63.048936 c -25.513445,8.830818 -40.431749,5.062937 -58.228027,0 C 37.184872,141.36421 69.052766,167.03073 100.6537,177.17297 Z"
+         id="path1106"
+         sodipodi:nodetypes="cccc" />
+      <path
+         style="opacity:1;fill:#003380;stroke-width:0.287194"
+         d="M 100.6551,177.17257 V 63.048536 c 25.51345,8.830818 40.43175,5.062937 58.22803,0 5.2408,78.315284 -26.62709,103.981804 -58.22803,114.124034 z"
+         id="path1110"
+         sodipodi:nodetypes="cccc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:35.2778px;opacity:1;fill:#ffffff;stroke:#ffffff;stroke-width:2.11667;stroke-dasharray:none"
+       x="67.351913"
+       y="116.93042"
+       id="text2726"><tspan
+         sodipodi:role="line"
+         id="tspan2724"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:Verdana;-inkscape-font-specification:Verdana;fill:#ffffff;stroke-width:2.11667"
+         x="67.351913"
+         y="116.93042">FDL</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#ffffff;stroke:none;stroke-width:2.11667;stroke-dasharray:none"
+       id="path2830"
+       inkscape:flatsided="false"
+       sodipodi:sides="5"
+       sodipodi:cx="92.795975"
+       sodipodi:cy="119.17548"
+       sodipodi:r1="8.721221"
+       sodipodi:r2="4.360611"
+       sodipodi:arg1="0.9530406"
+       sodipodi:arg2="1.5813591"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 97.847368,126.28485 -5.097453,-2.749 -5.154385,2.64071 1.039256,-5.69745 -4.104256,-4.08609 5.739748,-0.77222 2.617816,-5.16605 2.508103,5.2202 5.722153,0.89329 -4.189652,3.99848 z"
+       inkscape:transform-center-x="-0.028464879"
+       inkscape:transform-center-y="-0.8056849"
+       transform="translate(7.810952,19.223361)"
+       inkscape:export-filename="..\vue-fantasy-draft-lottery\src\assets\fdl logo small.svg"
+       inkscape:export-xdpi="12.46"
+       inkscape:export-ydpi="12.46" />
+  </g>
+</svg>
