@@ -24,7 +24,7 @@
               <v-layout row>
                 <v-col xs12>
                   <v-list two-line subheader>
-                    <v-list-item v-for="(league, index) in leagues" @click="onLeagueClick(league)" :key="league.name">
+                    <v-list-item v-for="(league, index) in leagues" @click="onLeagueClick(league)" :key="league.name" class="px-0 px-md-4">
                       <v-list-item-avatar :color="colors[index]" class="align-center">
                         <span class="white--text text-h5">{{league.name.charAt(0)}}</span>
                       </v-list-item-avatar>

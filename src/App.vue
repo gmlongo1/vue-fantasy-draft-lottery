@@ -4,13 +4,13 @@
       <v-app-bar-nav-icon
         @click.stop="sideNav = !sideNav"
         class="hidden-md-and-up"></v-app-bar-nav-icon>
-      <v-toolbar-title>
+      <v-toolbar-title class="pl-0">
         <v-row justify="center" align="center">
           <v-col>
             <v-img src="./assets/fdl logo small.png" max-height="56" max-width="84"></v-img>
           </v-col>
           <v-col>
-            <router-link to="/" tag="span" style="cursor:pointer; font-family: 'verdana'"><span>fantasy</span><span style="color: #004ba0">draft</span><span>lottery</span></router-link>
+            <router-link to="/" tag="span" style="cursor:pointer; font-family: 'verdana'"><span>Fantasy</span><span style="color: #004ba0">Draft</span><span>Lottery</span></router-link>
           </v-col>
         </v-row>
       </v-toolbar-title>

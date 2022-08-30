@@ -24,7 +24,7 @@
                 <v-col xs12>
                   <v-list two-line subheader>
                     <draggable @end="onTeamsReorder" v-model="teams" :options="{ handle:'.drag-handle' }">
-                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" @click="onTeamClick(team)">
+                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" @click="onTeamClick(team)" class="px-0 px-md-4">
                         <v-icon class="drag-handle" title="Drag Team to Reorder">mdi-drag-vertical</v-icon>
                         <v-list-item-avatar :color="colors[index]" style="margin-right: 10px">
                           <span class="icon white--text">{{ team.previousFinish }}</span>

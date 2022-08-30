@@ -47,7 +47,7 @@
                 <v-col xs12>
                   <v-list two-line subheader>
                     <transition-group name="list" tag="p">
-                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" class="list-item">
+                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" class="list-item px-0 px-md-4">
                         <v-list-item-avatar :color="colors[index]">
                           <span class="icon white--text">{{ team.draftOrder }}</span>
                         </v-list-item-avatar>
@@ -63,7 +63,7 @@
               <v-divider></v-divider>
               <v-layout row mt-2>
                 <v-col>
-                  <v-btn @click="onCancel()" class="mr-5">Cancel</v-btn>
+                  <v-btn @click="onCancel()" class="mr-4">Cancel</v-btn>
                   <v-btn class="red accent-4" dark @click="onEmailResults()">Email Results</v-btn>
                 </v-col>
               </v-layout>

@@ -67,7 +67,7 @@
               <v-layout row>
                 <v-col xs12>
                   <v-list two-line subheader>
-                    <v-list-item v-for="(team, index) in teams" v-bind:key="team.name">
+                    <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" class="px-0 px-md-4">
                       <v-list-item-avatar :color="colors[index]">
                         <span class="icon white--text">{{ team.previousFinish }}</span>
                       </v-list-item-avatar>
