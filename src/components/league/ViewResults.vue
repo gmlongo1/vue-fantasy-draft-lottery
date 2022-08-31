@@ -102,30 +102,43 @@ export default {
     )
 
     const teamsRef = firebase.database().ref('/users/' + user.uid + '/teams').orderByChild('leagueId').equalTo(this.$route.params.id)
+    let t = [];
 
-    teamsRef.on('child_added',
-      data => {
-        const val = data.val()
-        this.teams.push(
-          {
-            key: data.key,
+    teamsRef.once('value',
+      snapshot => {
+        snapshot.forEach((childSnapshot) => {
+          var childKey = childSnapshot.key;
+          var val = childSnapshot.val();
+          t.push({
+            key: childKey,
             name: val.name,
             email: val.email,
             owner: val.owner,
-            previousFinish: val.previousFinish,
-            draftOrder: val.draftOrder
+            draftOrder: val.draftOrder,
+            previousFinish: val.previousFinish
+          });
+
+          return false;
+        });
+
+        t.sort(
+          (a, b) => {
+            if (a.draftOrder < b.draftOrder)
+              return -1
+            if (a.draftOrder > b.draftOrder)
+              return 1
+            return 0
           }
         )
-      }
-    )
+      });
 
-    this.teams.sort(
-      (a, b) => {
-        if (a.draftOrder < b.draftOrder) { return -1 }
-        if (a.draftOrder > b.draftOrder) { return 1 }
-        return 0
-      }
-    )
+      let index = 0;
+      let interval = setInterval(() => {
+        if (this.teams.length == t.length) {
+          clearInterval(interval);
+        } else
+          this.teams.push(t[index++]);
+      }, 1000);
   },
   methods: {
     onCancel () {
