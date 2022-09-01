@@ -90,7 +90,7 @@
               <v-layout row justify-center>
                 <v-col>
                   <v-btn router to="/leagues" class="mr-4">Cancel</v-btn>
-                  <v-btn class="red accent-4" dark @click="onGenerateOrder()">Generate Order</v-btn>
+                  <v-btn class="red accent-4" dark @click="onGenerateOrder()"><v-icon left>mdi-arrow-down-thick</v-icon>Generate Order</v-btn>
                 </v-col>
               </v-layout>
             </v-container>

@@ -64,7 +64,7 @@
               <v-layout row mt-2>
                 <v-col>
                   <v-btn @click="onCancel()" class="mr-4">Cancel</v-btn>
-                  <v-btn class="red accent-4" dark @click="onEmailResults()">Email Results</v-btn>
+                  <v-btn class="red accent-4" dark @click="onEmailResults()"><v-icon left>mdi-email</v-icon>Email Results</v-btn>
                 </v-col>
               </v-layout>
             </v-container>
