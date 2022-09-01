@@ -61,7 +61,7 @@
               </v-layout>
               <v-layout row mt-3>
                 <v-col xs12>
-                  <h3>Teams (in order of previous finish)</span></h3>
+                  <h3>Teams (in order of previous finish)</h3>
                 </v-col>
               </v-layout>
               <v-layout row>
