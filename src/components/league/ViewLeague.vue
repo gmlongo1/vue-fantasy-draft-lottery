@@ -4,7 +4,7 @@
       <v-col xs12 sm6 offset-sm3>
         <v-card>
           <v-toolbar class="secondary">
-            <v-toolbar-title slot="extension" class="white--text">
+            <v-toolbar-title class="white--text">
               {{ name }}
             </v-toolbar-title>
           </v-toolbar>

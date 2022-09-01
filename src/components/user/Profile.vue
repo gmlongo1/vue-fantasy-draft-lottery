@@ -3,8 +3,8 @@
     <v-layout row>
       <v-col xs12 sm6 offset-sm3>
         <v-card>
-          <v-toolbar class="secondary" extended>
-            <v-toolbar-title slot="extension" class="white--text">Profile</v-toolbar-title>
+          <v-toolbar class="secondary">
+            <v-toolbar-title class="white--text">Profile</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <v-container>

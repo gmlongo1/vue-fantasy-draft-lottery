@@ -73,7 +73,7 @@
 
     <v-footer class="pa-3" bottom app>
       <v-spacer></v-spacer>
-      <div>© {{ new Date().getFullYear() }}</div>
+      <div>© Fantasy Draft Lottery {{ new Date().getFullYear() }}</div>
     </v-footer>
   </v-app>
 </template>

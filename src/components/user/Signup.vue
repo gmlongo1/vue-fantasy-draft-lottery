@@ -1,16 +1,16 @@
 <template>
   <v-container mt-0>
     <v-layout row>
-      <v-flex xs12 sm6 offset-sm3>
+      <v-col xs12 sm6 offset-sm3>
         <v-card>
-          <v-toolbar class="secondary" extended>
-            <v-toolbar-title slot="extension" class="white--text">Sign Up</v-toolbar-title>
+          <v-toolbar class="secondary">
+            <v-toolbar-title class="white--text">Sign Up</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <v-container>
               <v-form v-model="formValid">
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-text-field
                       name="email"
                       label="Mail"
@@ -19,10 +19,10 @@
                       type="email"
                       v-bind:rules="emailRules"
                       required></v-text-field>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-text-field
                       name="password"
                       label="Password"
@@ -31,10 +31,10 @@
                       type="password"
                       v-bind:rules="passwordRules"
                       required></v-text-field>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-text-field
                       name="confirmPassword"
                       label="Confirm Password"
@@ -42,18 +42,18 @@
                       v-model="confirmPassword"
                       type="password"
                       v-bind:rules="[comparePasswords]"></v-text-field>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-col xs12>
                     <v-btn @click="onSignup()" :disabled="!formValid">Sign Up</v-btn>
-                  </v-flex>
+                  </v-col>
                 </v-layout>
               </v-form>
             </v-container>
           </v-card-text>
         </v-card>
-      </v-flex>
+      </v-col>
     </v-layout>
     <v-snackbar
       :top="snackbarLocationTop"

@@ -3,7 +3,8 @@
     <v-layout row>
       <v-col xs12 sm6 offset-sm3>
         <v-card>
-          <v-toolbar class="secondary" extended>
+          <v-toolbar class="secondary">
+            <v-toolbar-title class="white--text">Leagues</v-toolbar-title>
             <v-btn
               fab
               small
@@ -17,7 +18,6 @@
             >
               <v-icon>add</v-icon>
             </v-btn>
-            <v-toolbar-title slot="extension" class="white--text">Leagues</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <v-container pa-0>
