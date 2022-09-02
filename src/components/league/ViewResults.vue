@@ -47,15 +47,18 @@
                 <v-col xs12>
                   <v-list two-line subheader>
                     <transition-group name="list" tag="p">
-                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" class="list-item px-0 px-md-4">
-                        <v-list-item-avatar :color="colors[index]">
-                          <span class="icon white--text">{{ team.draftOrder }}</span>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                          <v-list-item-title>{{ team.name }}</v-list-item-title>
-                          <v-list-item-subtitle>{{ team.owner }} &lt;{{ team.email }}&gt;</v-list-item-subtitle>
-                        </v-list-item-content>
-                      </v-list-item>
+                      <template v-for="(team, index) in teams">
+                        <v-list-item v-bind:key="team.name" class="list-item px-0 px-md-4">
+                          <v-list-item-avatar :color="colors[index]">
+                            <span class="icon white--text">{{ team.draftOrder }}</span>
+                          </v-list-item-avatar>
+                          <v-list-item-content>
+                            <v-list-item-title>{{ team.name }}</v-list-item-title>
+                            <v-list-item-subtitle>{{ team.owner }} &lt;{{ team.email }}&gt;</v-list-item-subtitle>
+                          </v-list-item-content>
+                        </v-list-item>
+                        <v-divider v-if="index + 1 < teams.length" v-bind:key="team.name + '-divider'"></v-divider>
+                      </template>
                     </transition-group>
                   </v-list>
                 </v-col>

@@ -24,21 +24,23 @@
                 <v-col xs12>
                   <v-list two-line subheader>
                     <draggable @end="onTeamsReorder" v-model="teams" :options="{ handle:'.drag-handle' }">
-                      <v-list-item v-for="(team, index) in teams" v-bind:key="team.name" @click="onTeamClick(team)" class="px-0 px-md-4">
-                        <v-icon class="drag-handle" title="Drag Team to Reorder">mdi-drag-vertical</v-icon>
-                        <v-list-item-avatar :color="colors[index]" style="margin-right: 10px">
-                          <span class="icon white--text">{{ team.previousFinish }}</span>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                          <v-list-item-title>{{ team.name }}</v-list-item-title>
-                          <v-list-item-subtitle>{{ team.owner }} &lt;{{ team.email }} &gt;</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                        <v-btn icon ripple @click.native.stop="onTeamDeleteClick(team)" title="Delete Team">
-                          <v-icon color="grey lighten-1">delete</v-icon>
-                        </v-btn>
-                      </v-list-item-action>
-                      </v-list-item>
+                      <template v-for="(team, index) in teams">
+                        <v-list-item v-bind:key="team.name" @click="onTeamClick(team)" class="px-0 px-md-4">
+                          <v-icon class="drag-handle" title="Drag Team to Reorder">mdi-drag-vertical</v-icon>
+                          <v-list-item-avatar :color="colors[index]" style="margin-right: 10px">
+                            <span class="icon white--text">{{ team.previousFinish }}</span>
+                          </v-list-item-avatar>
+                          <v-list-item-content>
+                            <v-list-item-title>{{ team.name }}</v-list-item-title>
+                            <v-list-item-subtitle>{{ team.owner }} &lt;{{ team.email }} &gt;</v-list-item-subtitle>
+                          </v-list-item-content>
+                          <v-list-item-action>
+                            <v-btn icon ripple @click.native.stop="onTeamDeleteClick(team)" title="Delete Team">
+                              <v-icon color="grey lighten-1">delete</v-icon>
+                            </v-btn>
+                          </v-list-item-action>
+                        </v-list-item>
+                      </template>
                     </draggable>
                   </v-list>
                 </v-col>
@@ -127,11 +129,16 @@ export default {
       }
     )
 
-    this.teams.sort(
-      (a, b) => {
-        if (a.previousFinish < b.previousFinish) { return -1 }
-        if (a.previousFinish > b.previousFinish) { return 1 }
-        return 0
+    // use the "value" callback to signify that all data has been retrieved so we can now sort
+    teamsRef.on('value',
+      data => {
+        this.teams.sort(
+          (a, b) => {
+            if (a.previousFinish < b.previousFinish) { return -1 }
+            if (a.previousFinish > b.previousFinish) { return 1 }
+            return 0
+          }
+        )
       }
     )
 

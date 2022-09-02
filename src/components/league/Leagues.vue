@@ -24,21 +24,24 @@
               <v-layout row>
                 <v-col xs12>
                   <v-list two-line subheader>
-                    <v-list-item v-for="(league, index) in leagues" @click="onLeagueClick(league)" :key="league.name" class="px-0 px-md-4">
-                      <v-list-item-avatar :color="colors[index]" class="align-center">
-                        <span class="white--text text-h5">{{league.name.charAt(0)}}</span>
-                      </v-list-item-avatar>
-                      <v-list-item-content>
-                        <v-list-item-title>{{ league.name }}</v-list-item-title>
-                        <v-list-item-subtitle>{{ league.owner }} &lt;{{ league.email }} &gt;</v-list-item-subtitle>
-                      </v-list-item-content>
-                      <v-list-item-action>
-                        <v-list-item-action-text class="mt-2">{{ league.season }}</v-list-item-action-text>
-                        <v-btn icon ripple @click.native.stop="onLeagueDeleteClick(league)" title="Delete League">
-                          <v-icon color="grey lighten-1">delete</v-icon>
-                        </v-btn>
-                      </v-list-item-action>
-                    </v-list-item>
+                    <template v-for="(league, index) in leagues">
+                      <v-list-item @click="onLeagueClick(league)" :key="league.name" class="px-0 px-md-4">
+                        <v-list-item-avatar :color="colors[index]" class="align-center">
+                          <span class="white--text text-h5">{{league.name.charAt(0)}}</span>
+                        </v-list-item-avatar>
+                        <v-list-item-content>
+                          <v-list-item-title>{{ league.name }}</v-list-item-title>
+                          <v-list-item-subtitle>{{ league.owner }} &lt;{{ league.email }} &gt;</v-list-item-subtitle>
+                        </v-list-item-content>
+                        <v-list-item-action>
+                          <v-list-item-action-text class="mt-2">{{ league.season }}</v-list-item-action-text>
+                          <v-btn icon ripple @click.native.stop="onLeagueDeleteClick(league)" title="Delete League">
+                            <v-icon color="grey lighten-1">delete</v-icon>
+                          </v-btn>
+                        </v-list-item-action>
+                      </v-list-item>
+                      <v-divider v-if="index + 1 < leagues.length" v-bind:key="league.name + '-divider'"></v-divider>
+                    </template>
                   </v-list>
                 </v-col>
               </v-layout>
